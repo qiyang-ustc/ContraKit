@@ -80,7 +80,7 @@ function readeins(dict::Dict{String, Any})
     return Tuple(x for x in ixs), iy
 end
 
-function postprocess(vertices, json_file)
+function postprocess(json_file)
     code = JSON.parsefile(json_file; dicttype=Dict, inttype=Int64, use_mmap=true) 
     
     einsrule = []

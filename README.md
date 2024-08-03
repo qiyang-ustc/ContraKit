@@ -6,6 +6,32 @@ Originally this is a warpper of wonderful Julia package [OMEinsumContractionOrde
 
 Our target is to make the optimization **AS SIMPLE AS POSSIBLE**, and can be easily utilized for everyone.
 
+## Hands-on
+
+### Step 1: Build Docker Image
+
+Later, when the image is stable, we will try to upload an Image to bypass this procedure. For now, to achieve this:
+
+```bash
+docker build -t contrakit -f .\Dockerfile .
+# or for Makefile:
+make build
+```
+
+### Step 2: Prepare an input file
+
+See: **Basic Tutorial part**, you need to give a file.
+
+### Step 3: Let Docker runthe program
+
+```bash
+docker run --mount type=bind,source=".",target=/app contrakit \
+ ./examples/net.yaml ./tmp/res.yaml
+# or 
+make run
+```
+Here, `./examples/net.yaml` is the input file, and `./tmp/res.yaml` is a generated output file.
+
 ## Basic Tutorial
 
 ### Concept 1: Tensor Networks

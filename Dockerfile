@@ -28,4 +28,4 @@ COPY main.jl .
 ENTRYPOINT ["julia", "./main.jl"]
 
 # Input file, output file
-CMD ["value1", "value2"]
+CMD ["--arg1", "value1", "value2", "value3"]
