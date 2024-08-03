@@ -1,0 +1,23 @@
+vertices:
+    A: [1,2,3]   # `A` can be arbitary string
+    B: [3,2,5]   # The order is important for users, but not ContraKit
+    C: [6,3,4]
+    D: [6,7,8]
+    E: [5,7,8]
+
+output: [1,4]  # the legs of output
+
+# Optional, by providing the egdes, optimizer would be better
+edges:
+    1: 6     # Number is availble 
+    2: chi   # Variable are OK
+    3: D^2   # Julia math notation
+    4: chi*D # This is also available
+    5: chi*D
+    6: chi*D
+    7: chi*D
+    8: D^2
+
+variables:
+    chi : 5
+    D   : 2

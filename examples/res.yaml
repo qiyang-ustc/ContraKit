@@ -1,0 +1,38 @@
+Step: 1
+    Eins:
+        Input: ((5, 7, 8), (6, 7, 8))
+        Output: (5, 6)
+
+    Tensors:
+        Input: ("E", "D")
+        Output: (-4,)
+
+
+Step: 2
+    Eins:
+        Input: ((5, 6), (3, 2, 5))
+        Output: (6, 3, 2)
+
+    Tensors:
+        Input: (-4, "B")
+        Output: (-3,)
+
+
+Step: 3
+    Eins:
+        Input: ((6, 3, 2), (6, 3, 4))
+        Output: (2, 4, 3)
+
+    Tensors:
+        Input: (-3, "C")
+        Output: (-2,)
+
+
+Step: 4
+    Eins:
+        Input: ((1, 2, 3), (2, 4, 3))
+        Output: (1, 4)
+
+    Tensors:
+        Input: ("A", -2)
+        Output: (-1,)

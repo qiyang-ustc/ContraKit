@@ -12,20 +12,20 @@ ENV JULIA_HISTORY=/root/.julia/logs/REQUIRE
 
 # 安装所需的Julia包
 RUN julia -e 'using Pkg; \
-    Pkg.add("OMEinsumContractionOrders") && \
-    Pkg.add("Graphs") && \
-    Pkg.add("KaHyPar") && \
+    Pkg.add("OMEinsumContractionOrders"); \
+    Pkg.add("OMEinsum"); \
+    Pkg.add("KaHyPar"); \
+    Pkg.add("YAML"); \
+    Pkg.add("JSON"); \
     Pkg.precompile()'
 
 # 可以设置工作目录，如果需要的话
 WORKDIR /app
 
 # 将你的Julia脚本复制到容器中
-# COPY your_script.jl .
+COPY main.jl .
 
-# 可以设置默认的命令来运行你的Julia脚本，如果需要的话
-# CMD ["julia", "your_script.jl"]
+ENTRYPOINT ["julia", "./main.jl"]
 
-# 暴露端口，方便直接连接
-EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+# Input file, output file
+CMD ["value1", "value2"]
